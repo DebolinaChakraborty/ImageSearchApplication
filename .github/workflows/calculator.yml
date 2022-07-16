@@ -19,7 +19,7 @@ jobs:
       run: cd $GITHUB_WORKSPACE
       
     - name: Print dir
-      run: cd
+      run: pwd
 
     - name: Create Build Directory
       run: mkdir _build
@@ -30,18 +30,15 @@ jobs:
     - name: Build Solution
       run: |
         msbuild.exe Calculator\Calculator.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
-    
+          
     - name: Print dir structure
-      run: dir $GITHUB_WORKSPACE\Calculator
-      
-    - name: Print dir structure
-      run: dir $GITHUB_WORKSPACE\Calculator\Calculator
+      run: pwd
       
     - name: Print current dir
-      run: cd
+      run: ls Output
       
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with:  
         name: assets-for-download
-        path: bin
+        path: Output
