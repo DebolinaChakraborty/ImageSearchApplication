@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace CalculatorTest
 {
+    /// <summary>
+    /// multiply tests
+    /// </summary>
     [TestFixture]
     public class MultiplyTest
     {
