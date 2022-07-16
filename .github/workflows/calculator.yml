@@ -27,3 +27,9 @@ jobs:
     - name: Build Solution
       run: |
         msbuild.exe Calculator\Calculator.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+    
+    - name: Use the Upload Artifact GitHub Action
+      uses: actions/upload-artifact@v2
+      with:  
+        name: assets-for-download
+        path: _build
