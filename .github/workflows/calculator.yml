@@ -17,6 +17,9 @@ jobs:
       
     - name: Navigate to Workspace
       run: cd $GITHUB_WORKSPACE
+      
+    - name: Print dir
+      run: cd
 
     - name: Create Build Directory
       run: mkdir _build
